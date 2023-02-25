@@ -2,13 +2,11 @@ import random
 
 
 def question(c):
-    i = 1
-    while i:
+    while True:
         k = random.choice(list(c))
         if k not in my_list:
             my_list.append(k)
-            i = 0
-            
+            break            
     ans = input(f'Введите столицы следующей страны: {k} ')
     if ans.title() == c[k]:
         print('Правильный ответ!')
