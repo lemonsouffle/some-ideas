@@ -1,6 +1,13 @@
 import turtle
 import random
 
+
+def spiral(size):
+    for j in range(size):
+        turtle.forward(2*j)
+        turtle.left(95)
+        
+
 turtle.bgcolor('black')
 turtle.speed(100)
 colors = ['red', 'green', 'brown', 'blue', 'white', 'yellow', 'orange', 'gray', 'pink', 'cyan', 'purple']
@@ -12,8 +19,6 @@ y = random.randint(-turtle.window_height()//2, turtle.window_height()//2)
 turtle.penup()
 turtle.setpos(x, y)
 turtle.pendown()
-for j in range(size):
-    turtle.forward(2 * j)
-    turtle.left(95)
+spiral(size)
 
 turtle.mainloop()
