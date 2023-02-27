@@ -2,17 +2,26 @@ import turtle
 import random
 
 
-def spiral(size):
-    for j in range(size):
+def spiral(s):
+    for j in range(s):
         turtle.forward(2 * j)
         turtle.left(95)
 
 
-def star(size):
+def star(s):
     turtle.right(random.randint(0, 180))
     for _ in range(5):
-        turtle.forward(size)
+        turtle.forward(s)
         turtle.right(144)
+
+
+def flower(s):
+    ang = random.randint(5, 15)
+    for _ in range(ang):
+        for angle in [60, 120, 60, 120]:
+            turtle.forward(s)
+            turtle.right(angle)
+        turtle.right(360/ang)
 
 
 turtle.bgcolor('black')
@@ -30,6 +39,7 @@ for i in range(50):
 
     size = random.randint(10, 60)
     # spiral(size)
-    star(size)
-
+    # star(size)
+    flower(size)
+    
 turtle.mainloop()
