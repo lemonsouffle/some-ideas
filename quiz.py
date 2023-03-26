@@ -1,12 +1,18 @@
 import random
 
-
 def question(c):
+    global my_list
     while True:
         k = random.choice(list(c))
-        if k not in my_list:
-            my_list.append(k)
-            break            
+        try:
+            if k not in my_list:
+                my_list.append(k)
+                break    
+        except NameError:
+            my_list = []
+            if k not in my_list:
+                my_list.append(k)
+                break
     ans = input(f'Введите столицы следующей страны: {k} ')
     if ans.title() == c[k]:
         print('Правильный ответ!')
@@ -44,7 +50,6 @@ countries = {
 }
 
 score = 0
-my_list = []
 for i in range(10):
     score += question(countries)
 print(f'Количество набранных очков: {score}')
