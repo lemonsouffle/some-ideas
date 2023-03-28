@@ -1,17 +1,17 @@
 import random
 
 def question(c):
-    global my_list
+    global used_countries
     while True:
         k = random.choice(list(c))
         try:
-            if k not in my_list:
-                my_list.append(k)
+            if k not in used_countries:
+                used_countries.append(k)
                 break    
         except NameError:
-            my_list = []
-            if k not in my_list:
-                my_list.append(k)
+            used_countries = []
+            if k not in used_countries:
+                used_countries.append(k)
                 break
     ans = input(f'Введите столицы следующей страны: {k} ')
     if ans.title() == c[k]:
